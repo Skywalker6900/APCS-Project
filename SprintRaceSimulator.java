@@ -29,7 +29,8 @@ public class SprintRaceSimulator {
             return baseTime * (0.95 + (Math.random() * 0.1)); 
         }
 
-        public String getName() {
+        @Override // Use of override to define my own toString
+        public String toString() {
             return name;
         }
     }
@@ -89,7 +90,7 @@ public class SprintRaceSimulator {
     private static void printResults(RaceResult[] results) {
         for (int i = 0; i < results.length; i++) {
             RaceResult result = results[i];
-            System.out.println((i + 1) + ". " + result.athlete.getName() + ": " + result.time + " seconds");
+            System.out.println((i + 1) + ". " + result.athlete.toString() + ": " + result.time + " seconds");
         }
     }
 }
